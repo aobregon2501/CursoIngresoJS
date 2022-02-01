@@ -13,11 +13,11 @@ var radioDelTerreno;
 
 function Rectangulo () 
 {
-    largoDelTerreno = document.getElementById('txtIdLargo').value;
-    anchoDelTerreno = document.getElementById('txtIdAncho').value;
     var perimetroDelTerreno;
     var metrosDeAlambre;
-
+    largoDelTerreno = document.getElementById('txtIdLargo').value;
+    anchoDelTerreno = document.getElementById('txtIdAncho').value;
+    
     perimetroDelTerreno = 2*parseInt(largoDelTerreno) + 2*parseInt(anchoDelTerreno);
     metrosDeAlambre = 3*perimetroDelTerreno;
 
@@ -25,9 +25,9 @@ function Rectangulo ()
 }
 function Circulo () 
 {
-	radioDelTerreno = document.getElementById('txtIdRadio').value;
     var circunferenciaDelTerreno;
     var metrosDeAlambre;
+	radioDelTerreno = document.getElementById('txtIdRadio').value;  
 
     circunferenciaDelTerreno = 3.14 * 2*radioDelTerreno;
     metrosDeAlambre = 3*circunferenciaDelTerreno;
@@ -36,12 +36,12 @@ function Circulo ()
 }
 function Materiales () 
 {
-	largoDelTerreno = document.getElementById('txtIdLargo').value;
-    anchoDelTerreno = document.getElementById('txtIdAncho').value;
     var areaDelTerreno;
     var bolsasDeCemento;
     var bolsasDeCal;
-
+	largoDelTerreno = document.getElementById('txtIdLargo').value;
+    anchoDelTerreno = document.getElementById('txtIdAncho').value;
+    
     areaDelTerreno = parseInt(largoDelTerreno) * parseInt(anchoDelTerreno);
     bolsasDeCemento = 2*areaDelTerreno;
     bolsasDeCal = 3*areaDelTerreno;
