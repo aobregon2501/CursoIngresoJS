@@ -11,7 +11,7 @@ function mostrar()
 	suNombre = document.getElementById('txtIdNombre').value;
 	suEdad = document.getElementById('txtIdEdad').value;
 
-	alert("Su nombre es " + String(suNombre) + " y tiene " + String(suEdad) + " años.");
+	alert("Su nombre es " + suNombre + " y tiene " + suEdad + " años.");
 }
 
 //nombre: txtIdNombre , edad: txtIdEdad
