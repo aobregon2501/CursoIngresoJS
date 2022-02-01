@@ -14,7 +14,7 @@ function mostrarAumento()
 	sueldoIngresado = document.getElementById('txtIdSueldo').value;
 
 	sueldoIngresado = parseInt(sueldoIngresado);
-	//aumentoDeSueldo = sueldoIngresado + ...;
+	aumentoDeSueldo = sueldoIngresado + 0.1*sueldoIngresado;
 
 	document.getElementById('txtIdResultado').value = aumentoDeSueldo;
 }

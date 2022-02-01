@@ -44,7 +44,7 @@ function PrecioFinal ()
     var precioFinal;
 
     suma = parseInt(precioUno) + parseInt(precioDos) + parseInt(precioTres);
-    //precioFinal = suma + ...;
+    precioFinal = suma + 0.21*suma;
 
     alert("El precio final es " + precioFinal);
 }

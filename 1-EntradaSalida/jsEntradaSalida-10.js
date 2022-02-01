@@ -14,7 +14,7 @@ function mostrarAumento()
 	importeIngresado = document.getElementById('txtIdImporte').value;
 
 	importeIngresado = parseInt(importeIngresado);
-	//descuentoDeImporte = importeIngresado - ...;
+	descuentoDeImporte = importeIngresado - 0.25*importeIngresado;
 
 	document.getElementById('txtIdResultado').value = descuentoDeImporte;
 }
