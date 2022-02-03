@@ -1,6 +1,18 @@
+/*
+Obregón Alex DIV I
+Ins/IF 01
+Al ingresar una edad que sea igual a 15,
+mostrar el mensaje "niña bonita".
+*/
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	var edadIngresada;
+	var condicional = 15;
 
-}//FIN DE LA FUNCIÓN
+	edadIngresada = document.getElementById('txtIdEdad').value;
+	if(condicional == edadIngresada){
+		alert("niña bonita");
+	}
+}
+// txtIdEdad

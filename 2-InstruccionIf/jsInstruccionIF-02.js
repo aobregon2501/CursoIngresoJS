@@ -1,7 +1,19 @@
+/*
+Obregón Alex DIV I
+Ins/IF 02
+Al ingresar una edad debemos informar solo
+si la persona es mayor de edad.
+*/
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
-	
+	var edadIngresada;
+	var mayoriaDeEdad = 18;
 
-}//FIN DE LA FUNCIÓN
+	edadIngresada = document.getElementById('txtIdEdad').value;
+
+	if(edadIngresada >= mayoriaDeEdad){
+		alert("Esta persona es mayor de edad, tiene " + edadIngresada);
+	}
+}
+// txtIdEdad

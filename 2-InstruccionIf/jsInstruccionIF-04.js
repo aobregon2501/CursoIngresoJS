@@ -1,7 +1,19 @@
+/*
+Obregón Alex DIV I
+Ins/IF 04
+Al ingresar una edad debemos informar
+si la persona es adolescente,
+edad entre 13 y 17 años (inclusive).
+*/
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	var edadIngresada;
 
+	edadIngresada = document.getElementById('txtIdEdad').value;
 
-}//FIN DE LA FUNCIÓN
+	if((13 <= edadIngresada) * (edadIngresada <= 17)){
+		alert("Esta persona es adolescente, tiene " + edadIngresada);
+	}
+}
+// txtIdEdad
