@@ -17,9 +17,11 @@ function Rectangulo ()
     var metrosDeAlambre;
     largoDelTerreno = document.getElementById('txtIdLargo').value;
     anchoDelTerreno = document.getElementById('txtIdAncho').value;
-    
-    perimetroDelTerreno = 2*parseInt(largoDelTerreno) + 2*parseInt(anchoDelTerreno);
-    metrosDeAlambre = 3*perimetroDelTerreno;
+    largoDelTerreno = parseInt(largoDelTerreno);
+    anchoDelTerreno = parseInt(anchoDelTerreno);
+
+    perimetroDelTerreno = 2 * (largoDelTerreno + anchoDelTerreno);
+    metrosDeAlambre = 3 * perimetroDelTerreno;
 
     alert("Se deben comprar " + metrosDeAlambre + "m de alambre.");
 }
@@ -28,9 +30,10 @@ function Circulo ()
     var circunferenciaDelTerreno;
     var metrosDeAlambre;
 	radioDelTerreno = document.getElementById('txtIdRadio').value;  
+    radioDelTerreno = parseInt(radioDelTerreno);
 
-    circunferenciaDelTerreno = 3.14 * 2*radioDelTerreno;
-    metrosDeAlambre = 3*circunferenciaDelTerreno;
+    circunferenciaDelTerreno = 3.14 * 2 * radioDelTerreno;
+    metrosDeAlambre = 3 * circunferenciaDelTerreno;
 
     alert("Se deben comprar " + metrosDeAlambre + "m de alambre.");
 }
@@ -41,10 +44,12 @@ function Materiales ()
     var bolsasDeCal;
 	largoDelTerreno = document.getElementById('txtIdLargo').value;
     anchoDelTerreno = document.getElementById('txtIdAncho').value;
+    largoDelTerreno = parseInt(largoDelTerreno);
+    anchoDelTerreno = parseInt(anchoDelTerreno);
     
-    areaDelTerreno = parseInt(largoDelTerreno) * parseInt(anchoDelTerreno);
-    bolsasDeCemento = 2*areaDelTerreno;
-    bolsasDeCal = 3*areaDelTerreno;
+    areaDelTerreno = largoDelTerreno * anchoDelTerreno;
+    bolsasDeCemento = 2 * areaDelTerreno;
+    bolsasDeCal = 3 * areaDelTerreno;
 
     alert("Se necesitan " + bolsasDeCemento + " bolsas de cemento y " + bolsasDeCal + " bolsas de cal."); 
 }

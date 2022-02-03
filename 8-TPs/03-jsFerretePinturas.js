@@ -12,6 +12,7 @@ var cambioDeUnidad;
 function FahrenheitCentigrados () 
 {
 	temperaturaIngresada = document.getElementById('txtIdTemperatura').value;
+    temperaturaIngresada = parseInt(temperaturaIngresada);
 
     cambioDeUnidad = (temperaturaIngresada - 32) / 1.8;
 
@@ -21,6 +22,7 @@ function FahrenheitCentigrados ()
 function CentigradosFahrenheit () 
 {
 	temperaturaIngresada = document.getElementById('txtIdTemperatura').value;
+    temperaturaIngresada = parseInt(temperaturaIngresada);
 
     cambioDeUnidad = (temperaturaIngresada * 1.8) + 32;
 

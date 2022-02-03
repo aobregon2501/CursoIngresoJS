@@ -53,7 +53,7 @@ function PrecioFinal ()
     precioTres = parseInt(precioTres);
 
     suma = precioUno + precioDos + precioTres;;
-    precioFinal = suma + 0.21*suma;
+    precioFinal = 1.21 * suma;
 
     alert("El precio final es " + precioFinal);
 }
