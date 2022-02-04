@@ -15,7 +15,14 @@ function mostrar()
 	if(edadIngresada < 0){
 		alert("Ingrese una edad existente");
 	}
-	elseif((edadIngresada >= 0) * (edadIngresada < 13))
-
+	else if((edadIngresada >= 0) && (edadIngresada < 13)){
+		alert("Esta persona es un niño, tiene " + edadIngresada);
+	}
+	else if((edadIngresada >= 13) && (edadIngresada <= 17)){
+		alert("Esta persona es un adolescente, tiene " + edadIngresada);
+	}
+	else{
+		alert("Esta persona es un adulto, tiene "+ edadIngresada);
+	}
 }
 // txtIdEdad

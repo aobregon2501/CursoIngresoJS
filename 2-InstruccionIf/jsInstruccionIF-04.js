@@ -12,7 +12,7 @@ function mostrar()
 
 	edadIngresada = document.getElementById('txtIdEdad').value;
 
-	if((13 <= edadIngresada) * (edadIngresada <= 17)){
+	if((13 <= edadIngresada) && (edadIngresada <= 17)){
 		alert("Esta persona es adolescente, tiene " + edadIngresada);
 	}
 }

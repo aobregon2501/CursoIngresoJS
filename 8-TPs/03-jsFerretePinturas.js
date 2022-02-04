@@ -8,6 +8,7 @@ B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en
 
 var temperaturaIngresada;
 var cambioDeUnidad;
+var mensaje;
 
 function FahrenheitCentigrados () 
 {
@@ -16,7 +17,9 @@ function FahrenheitCentigrados ()
 
     cambioDeUnidad = (temperaturaIngresada - 32) / 1.8;
 
-    alert(temperaturaIngresada + " grados fahrenheit equivalen a " + cambioDeUnidad + " grados centígrados");
+    mensaje = temperaturaIngresada + " grados fahrenheit equivalen a ";
+    mensaje += cambioDeUnidad + " grados centígrados";
+    alert(mensaje);
 }
 
 function CentigradosFahrenheit () 
@@ -26,7 +29,9 @@ function CentigradosFahrenheit ()
 
     cambioDeUnidad = (temperaturaIngresada * 1.8) + 32;
 
-    alert(temperaturaIngresada + " grados centígrados equivalen a " + cambioDeUnidad + " grados fahrenheit");
+    mensaje = temperaturaIngresada + " grados centígrados equivalen a ";
+    mensaje += cambioDeUnidad + " grados fahrenheit"
+    alert(mensaje);
 }
 
 // txtIdTemperatura
