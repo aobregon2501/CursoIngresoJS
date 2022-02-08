@@ -4,15 +4,16 @@ Ins/IF 01
 Al ingresar una edad que sea igual a 15,
 mostrar el mensaje "niña bonita".
 */
+// txtIdEdad
 
 function mostrar()
 {
 	var edadIngresada;
-	var condicional = 15;
 
-	edadIngresada = document.getElementById('txtIdEdad').value;
-	if(condicional == edadIngresada){
+	edadIngresada = document.getElementById('txtIdEdad').value
+	edadIngresada = parseInt(edadIngresada);
+
+	if(15 == edadIngresada){
 		alert("niña bonita");
 	}
 }
-// txtIdEdad
