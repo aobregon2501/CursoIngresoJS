@@ -14,20 +14,21 @@ function mostrar()
 	edadIngresada = document.getElementById('txtIdEdad').value;
 	edadIngresada = parseInt(edadIngresada);
 
-	if(edadIngresada < 0){
+	if(edadIngresada < 0)
+	{
 		alert("Ingrese una edad existente");
 	}
 	else
 	{
-		if((edadIngresada >= 0) && (edadIngresada < 13))
+		if(edadIngresada < 13)
 		{
-		alert("Esta persona es un niño, tiene " + edadIngresada);
+			alert("Esta persona es un niño, tiene " + edadIngresada);
 	    }
 	    else
 		{
-	        if((edadIngresada >= 13) && (edadIngresada <= 17))
+	        if(edadIngresada <= 17)
 			{
-		    alert("Esta persona es un adolescente, tiene " + edadIngresada);
+				 alert("Esta persona es un adolescente, tiene " + edadIngresada);
 	        }
 	        else
 			{

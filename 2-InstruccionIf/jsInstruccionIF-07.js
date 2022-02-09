@@ -11,19 +11,15 @@ function mostrar()
 {
 	var edadIngresada;
 	var estadoCivilIngresado;
-	var condicional;
-	condicional = "Soltero";
-	condicional = parseInt(condicional);
 
 	edadIngresada = document.getElementById('txtIdEdad').value;
 	edadIngresada = parseInt(edadIngresada);
 	estadoCivilIngresado = document.getElementById('estadoCivil').value;
-	estadoCivilIngresado = parseInt(estadoCivilIngresado);
-
-	console.log(estadoCivilIngresado);
-
-	if((edadIngresada < 18)){
-		if(estadoCivilIngresado != condicional){
+	
+	if(edadIngresada < 18)
+	{
+		if(estadoCivilIngresado != "Soltero")
+		{
 			alert("Es muy pequeño para NO ser soltero.");
 		}
 	}
