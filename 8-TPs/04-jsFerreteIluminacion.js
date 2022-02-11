@@ -1,6 +1,6 @@
 /*
 Obregón Alex DIV I
-TP Ferrette Iluminación solo el A
+TP Ferrette Iluminación
 4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
@@ -14,17 +14,75 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
 function CalcularPrecio () 
 {
+    var precioUnidad;
     var precioFinal;
     var cantidadDeLamparitas;
+    var marcaSeleccionada;
+    var descuentoAplicado;
+    var iIBB;
+    var mensaje;
+
+    marcaSeleccionada = document.getElementById('Marca').value;
     cantidadDeLamparitas = document.getElementById('txtIdCantidad').value;
     cantidadDeLamparitas = parseInt(cantidadDeLamparitas);
 
-    precioFinal = 35 * cantidadDeLamparitas;
+    precioUnidad = 35;
+    precioFinal = precioUnidad * cantidadDeLamparitas;
+    descuentoAplicado = 0;
 
-    if(cantidadDeLamparitas >= 6)
+    if(cantidadDeLamparitas > 5)
     {
-        precioFinal = precioFinal * 0.5;
+        descuentoAplicado = 0.5;
     }
+    else
+    {
+        if(cantidadDeLamparitas == 5)
+        {
+            descuentoAplicado = 0.3;
+            if(marcaSeleccionada == "ArgentinaLuz")
+            {
+                descuentoAplicado = 0.4;
+            }
+        } 
+        else
+        {
+            if(cantidadDeLamparitas == 4)
+            {
+                descuentoAplicado = 0.2;
+                if((marcaSeleccionada == "ArgentinaLuz") || (marcaSeleccionada == "FelipeLamparas"))
+                {
+                    descuentoAplicado = 0.25;
+                }
+            }
+            else
+            {
+                if(cantidadDeLamparitas == 3)
+                {
+                    descuentoAplicado = 0.05;
+                    if(marcaSeleccionada != "ArgentinaLuz")
+                    {
+                        if(marcaSeleccionada == "FelipeLamparas")
+                        {
+                            descuentoAplicado = 0.1;
+                        }
+                    }
+                    else
+                    {
+                        descuentoAplicado = 0.15;
+                    }
+                }
+            }
+        }
+    }
+    precioFinal -= precioFinal * descuentoAplicado;
+    mensaje = precioFinal;
 
-    document.getElementById('txtIdprecioDescuento').value = precioFinal;
+    if(precioFinal > 120)
+    {
+        iIBB = 0.1 * precioFinal;
+        precioFinal += iIBB;
+        mensaje += " (Usted pago " + iIBB + " de IIBB)";
+    }
+    
+    document.getElementById('txtIdprecioDescuento').value = mensaje;
 }
