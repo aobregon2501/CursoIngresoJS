@@ -28,60 +28,66 @@ function CalcularPrecio ()
 
     precioUnidad = 35;
     precioFinal = precioUnidad * cantidadDeLamparitas;
-    descuentoAplicado = 0;
 
-    if(cantidadDeLamparitas > 5)
+    if(cantidadDeLamparitas < 1)
     {
-        descuentoAplicado = 0.5;
+        mensaje = "Ingrese una cantidad existente de lamparitas";
     }
     else
     {
-        if(cantidadDeLamparitas == 5)
+        switch(cantidadDeLamparitas)
         {
-            descuentoAplicado = 0.3;
-            if(marcaSeleccionada == "ArgentinaLuz")
-            {
-                descuentoAplicado = 0.4;
-            }
-        } 
-        else
-        {
-            if(cantidadDeLamparitas == 4)
-            {
-                descuentoAplicado = 0.2;
-                if((marcaSeleccionada == "ArgentinaLuz") || (marcaSeleccionada == "FelipeLamparas"))
+            case 1:
+            case 2:
+                descuentoAplicado = 0;
+            break;
+            case 3:
+                switch(marcaSeleccionada)
                 {
-                    descuentoAplicado = 0.25;
+                    case "ArgentinaLuz":
+                        descuentoAplicado = 15;
+                    break;
+                    case "FelipeLamparas":
+                        descuentoAplicado = 10;
+                    break;
+                    default:
+                        descuentoAplicado = 5;
                 }
-            }
-            else
-            {
-                if(cantidadDeLamparitas == 3)
+            break;
+            case 4:
+                switch(marcaSeleccionada)
                 {
-                    descuentoAplicado = 0.05;
-                    if(marcaSeleccionada != "ArgentinaLuz")
-                    {
-                        if(marcaSeleccionada == "FelipeLamparas")
-                        {
-                            descuentoAplicado = 0.1;
-                        }
-                    }
-                    else
-                    {
-                        descuentoAplicado = 0.15;
-                    }
+                    case "ArgentinaLuz":
+                    case "FelipeLamparas":
+                        descuentoAplicado = 25;
+                    break;
+                    default:
+                        descuentoAplicado = 20;
                 }
-            }
+            break;
+            case 5:
+                switch(marcaSeleccionada)
+                {
+                    case "ArgentinaLuz":
+                        descuentoAplicado = 40;
+                    break;
+                    default:
+                        descuentoAplicado = 30;
+                }
+            break;
+            default:
+                descuentoAplicado = 50;
         }
-    }
-    precioFinal -= precioFinal * descuentoAplicado;
-    mensaje = precioFinal;
 
-    if(precioFinal > 120)
-    {
-        iIBB = 0.1 * precioFinal;
-        precioFinal += iIBB;
-        mensaje += " (Usted pago " + iIBB + " de IIBB)";
+        precioFinal -= precioFinal * descuentoAplicado / 100;
+        mensaje = precioFinal;
+
+        if(precioFinal > 120)
+        {
+            iIBB = 10 * precioFinal / 100;
+            precioFinal += iIBB;
+            alert("Usted pago " + iIBB + " de IIBB");
+        }
     }
     
     document.getElementById('txtIdprecioDescuento').value = mensaje;

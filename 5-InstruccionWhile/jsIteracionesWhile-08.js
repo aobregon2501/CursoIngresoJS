@@ -1,19 +1,55 @@
 /*
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-sumar los que son positivos y multiplicar los negativos.*/
+Obregón Alex DIV I
+Ej While 08
+Al presionar el botón pedir números hasta que el usuario quiera,
+sumar los que son positivos y multiplicar los negativos.
+*/
+// txtIdSuma , txtIdProducto
+
 function mostrar()
 {
-	var contador;
+	var numerosIngresados;
+	var suma;
+	var producto;
+	var condicion;
 	var respuesta;
-	var sumaPositivos;
-	var multiplicacionNegativos;
-	contador=0;
-	sumaPositivos=0;
-	multiplicacionNegativos=1;
-	respuesta='si';
+	
 
+	suma = 0;
+	producto = 1;
+	condicion = 1;
+	respuesta = "si";
 
-	txtIdSuma.value=sumaPositivos;
-	txtIdProducto.value=multiplicacionNegativos;
+	while(respuesta == "si")
+	{
+		numerosIngresados = prompt("Ingrese el un número.");
+		numerosIngresados = parseInt(numerosIngresados);
+		
+		if(numerosIngresados < 0)
+		{
+			producto = producto * numerosIngresados;
+		}
+		else
+		{
+			suma += numerosIngresados;
+		}
 
-}//FIN DE LA FUNCIÓN
+		respuesta = prompt("¿Quiere ingresar más números? si/no.");
+		while(condicion)
+		{
+			switch(respuesta)
+			{
+				case "si":
+				case "no":
+					condicion = 0;
+				break;
+				default:
+					respuesta = prompt("ERROR: Responda si ó no.");
+			}
+		}
+		condicion = 1;
+	}
+
+	document.getElementById('txtIdSuma').value = suma;
+	document.getElementById('txtIdProducto').value = producto;
+}

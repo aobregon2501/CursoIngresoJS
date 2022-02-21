@@ -32,40 +32,36 @@ function mostrar()
 	switch(estacionIngresada)
 	{
 		case "Invierno":
-			if(destinoIngresado == "Bariloche")
+			switch(destinoIngresado)
 			{
-				porcentajeTarifa = 0.2;
-			}
-			else
-			{
-				porcentajeTarifa = -0.1;
-				if(destinoIngresado == "Mar del plata")
-				{
+				case "Bariloche":
+					porcentajeTarifa = 0.2;
+				break;
+				case "Mar del plata":
 					porcentajeTarifa = -0.2;
-				}
+				break;
+				default:
+					porcentajeTarifa = -0.1;
 			}
 		break;
 		case "Verano":
-			if(destinoIngresado == "Bariloche")
+			switch(destinoIngresado)
 			{
-				porcentajeTarifa = -0.2;
-			}
-			else
-			{
-				porcentajeTarifa = 0.1;
-				if(destinoIngresado == "Mar del plata")
-				{
+				case "Bariloche":
+					porcentajeTarifa = -0.2;
+				break;
+				case "Mar del plata":
 					porcentajeTarifa = 0.2;
-				}
+				break;
+				default:
+					porcentajeTarifa = 0.1;
 			}
-		break;
 		default:
 			porcentajeTarifa = 0;
 			if(destinoIngresado != "Cordoba")
 			{
 				porcentajeTarifa = 0.1;
 			}
-		break;
 	}
 	console.log(porcentajeTarifa);
 	tarifaFinal += porcentajeTarifa * tarifaFinal;
